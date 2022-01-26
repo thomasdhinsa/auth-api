@@ -1,0 +1,41 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDMzMjcwMzB9.xBuPQRZRYR_qG3IfXyTlFfaa81I7cjb_xh3PDjzpfaM
+
+
+###USERS
+#Create (sign-up)
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Tom",
+  "email": "Tom@gmail.com",
+  "password": "password",
+  "password_confirmation": "password" 
+}
+
+###SHOW (current user)
+Get http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+
+
+
+
+
+
+
+
+
+###SESSIONS
+#Create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+   "email": "Fred@gmail.com",
+   "password": "password"
+}
+
+###
